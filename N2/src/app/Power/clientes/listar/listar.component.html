@@ -1,0 +1,59 @@
+<header id="cabecera">
+    <img src="./assets/LogoUPS.png" class="logoUPS" style="float:left; height:70px; width: 70px;">
+    <a id="logo">
+        <span class="TIT">Universidad Politécnica Salesiana</span>
+        <span class="SUBTIT">PROYECTO FINAL PROGRAMACIÓN WEB</span>
+    </a> <!-- / #logo-header -->
+    <nav>
+        <ul>
+            <li (click)="goListClientes()"><a>Gestionar Clientes</a></li>
+            <li (click)="goToList()"><a>Gestionar Productos</a></li>
+            <li (click)="goListaFac()"><a>Gestionar Facturas</a></li>
+            <li (click)="goCreaCompra()"><a>Realizar Compra</a></li>
+        </ul>
+    </nav><!-- / nav -->
+
+</header>
+<br><br><br><br>
+<div class="w-33">
+    <div class="center">
+        <h1>Listar Clientes</h1>
+    </div>
+</div>
+
+
+
+<table rules=all frame="box" class="styled-table" >
+<tr id="cabecera_tabla">  
+    <th id="txtNegrita">&nbsp;&nbsp;Cedula&nbsp;&nbsp;</th>
+    <th id="txtNegrita">&nbsp;&nbsp;Nombre&nbsp;&nbsp;</th>
+    <TH id="txtNegrita">&nbsp;&nbsp;Direccion&nbsp;&nbsp;</TH>
+    <th id="txtNegrita">&nbsp;&nbsp;Acciones</th>
+</tr>
+<!-- <tr *ngFor="let product of listaProductos"> 
+    <th>{{product.code}}</th>
+    <th>{{product.name}}</th>
+    <th>{{product.price}}</th>
+    <th><button (click)="editProducts(product)">Editar</button></th>
+    <th><button (click)="deleteProduct(product)">Eliminar</button></th>
+</tr> -->
+
+<tr *ngFor="let persona of personas"> 
+    <th id="txtNoNegrita">{{persona.per_cedula}}</th>
+    <th id="txtNoNegrita">{{persona.per_Nombre}}</th>
+    <th id="txtNoNegrita">{{persona.per_Direccion}}</th>
+    <th colspan="2"><button id="miBotonBonito" (click)="editarCliente(persona)">Editar</button>
+        &nbsp;&nbsp;<button id="miBotonBonito" (click)="eliminarCliente(persona)">Eliminar</button>
+    </th>
+    
+</tr> 
+
+
+
+</table>
+
+<div class="w-33">
+    <div class="center">
+        <button id="miBotonBonitoa" type="button" (click)="goCreaCliente()">Crear un nuevo cliente</button>
+    </div>
+</div>

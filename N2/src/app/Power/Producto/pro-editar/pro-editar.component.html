@@ -1,0 +1,35 @@
+<header id="cabecera">
+    <img src="./assets/LogoUPS.png" class="logoUPS" style="float:left; height:70px; width: 70px;">
+    <a id="logo">
+        <span class="TIT">Universidad Politécnica Salesiana</span>
+        <span class="SUBTIT">PROYECTO FINAL PROGRAMACIÓN WEB</span>
+    </a> <!-- / #logo-header -->
+    <nav>
+        <ul>
+            <li (click)="goListClientes()"><a>Gestionar Clientes</a></li>
+            <li (click)="goToList()"><a>Gestionar Productos</a></li>
+            <li (click)="goListaFac()"><a>Gestionar Facturas</a></li>
+            <li (click)="goCreaCompra()"><a>Realizar Compra</a></li>
+        </ul>
+    </nav><!-- / nav -->
+
+</header>
+<br><br><br><br>
+<div >
+    <div class="center">
+        <form>
+    
+            <label id="txtNegrita" for="txtCode">Codigo&nbsp;&nbsp;</label><br/>
+            <input id="txtCode" name="txtCode" readonly="readonly"[(ngModel)]="p.pro_codigo" disabled="true"/><br/>
+            <label id="txtNegrita"  for="txtName">Nombre&nbsp;&nbsp;</label><br/>
+            <input id="txtName" name="txtName" [(ngModel)]="p.pro_nombre"/><br/>
+            <label id="txtNegrita"  for="txtName">Precio&nbsp;&nbsp;</label><br/>
+            <input type="number" id="a" name="a" [(ngModel)]="p.pro_precio"/><br/>
+            <label id="txtNegrita"  for="txtPrice">Stock&nbsp;&nbsp;</label><br/>
+            <input type="number" id="txtPrice" name="txtPrice" [(ngModel)]="p.pro_stock"/><br/>
+        
+            <button id="miBotonBonito" (click)="edit()" mat-raised-button color="accent">Guardar</button>
+            
+        </form> 
+    </div>
+</div>

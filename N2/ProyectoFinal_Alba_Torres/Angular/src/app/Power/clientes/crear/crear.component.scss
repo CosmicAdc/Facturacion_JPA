@@ -1,0 +1,91 @@
+#cabecera {
+	background: #333;
+	font-size: medium;
+	height: 80px;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+	a {
+		color: #52b2fc;
+	}
+}
+#logo {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none;
+	&:hover {
+		color: #0b76a6;
+	}
+	.TIT {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em;
+	}
+	.SUBTIT {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #999;
+	}
+}
+nav {
+	float: right;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		padding-right: 20px;
+		li {
+			display: inline-block;
+			line-height: 80px;
+			a {
+				display: block;
+				padding: 0 10px;
+				text-decoration: none;
+				transition: all 0.8s;
+				&:hover {
+					background-color: #0b76a6;
+				}
+			}
+		}
+	}
+}
+
+
+div.w-33 {
+	padding: 8px	;
+}
+  
+div.center {
+	text-align: center;
+}
+
+input:focus {
+	border: rgb(120, 210, 233);
+	background-color: #cdd4f3;
+}
+label{
+	padding: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+input{
+	margin: 10px;
+	height: 25px;
+}
+
+#miBotonBonito{
+	margin: 10px;
+	size: 40px;
+	background-color: rgb(2, 116, 161);
+	color: white;
+	transition: all 0.8s;
+	height: 35px;
+	width: 200px;
+	&:hover{
+		background-color: rgb(143, 192, 232);
+		color: black;
+		
+	}
+}

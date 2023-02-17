@@ -1,0 +1,41 @@
+<header id="cabecera">
+    <img src="./assets/LogoUPS.png" class="logoUPS" style="float:left; height:70px; width: 70px;">
+    <a id="logo">
+        <span class="TIT">Universidad Politécnica Salesiana</span>
+        <span class="SUBTIT">PROYECTO FINAL PROGRAMACIÓN WEB</span>
+    </a> <!-- / #logo-header -->
+    <nav>
+        <ul>
+            <li (click)="goListClientes()"><a>Gestionar Clientes</a></li>
+            <li (click)="goToList()"><a>Gestionar Productos</a></li>
+            <li (click)="goListaFac()"><a>Gestionar Facturas</a></li>
+            <li (click)="goCreaCompra()"><a>Realizar Compra</a></li>
+        </ul>
+    </nav><!-- / nav -->
+
+</header>
+<br><br><br><br>
+<div class="w-33">
+    <div class="center">
+        <h1>DETALLES DE LA FACTURA</h1>
+    </div>
+</div>
+
+<table rules=all frame="box" class="styled-table">
+    <tr  id="cabecera_tabla"> 
+        <th id="txtNegrita">&nbsp;&nbsp;Codigo del producto&nbsp;&nbsp;</th>
+        <th id="txtNegrita">&nbsp;&nbsp;Cantidad&nbsp;&nbsp;</th>
+        <TH id="txtNegrita">&nbsp;&nbsp;Precio</TH>
+    </tr>
+    <tr *ngFor="let detalle of detalles"> 
+        <th id="txtNoNegrita">{{detalle.pro_codigo}}</th>
+        <th id="txtNoNegrita">{{detalle.det_cantidad}}</th>
+        <th id="txtNoNegrita">{{detalle.det_precio}}</th>
+    </tr> 
+    
+</table>
+<div class="w-33">
+    <div class="center">
+        <button id="miBotonBonitoa" (click)="goListaFac()">VOLVER A LISTA DE FACTURAS</button>
+    </div>
+</div>

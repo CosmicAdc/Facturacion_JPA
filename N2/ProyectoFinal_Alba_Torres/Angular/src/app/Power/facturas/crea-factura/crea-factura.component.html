@@ -1,0 +1,43 @@
+<header id="cabecera">
+    <img src="./assets/LogoUPS.png" class="logoUPS" style="float:left; height:70px; width: 70px;">
+    <a id="logo">
+        <span class="TIT">Universidad Politécnica Salesiana</span>
+        <span class="SUBTIT">PROYECTO FINAL PROGRAMACIÓN WEB</span>
+    </a> <!-- / #logo-header -->
+    <nav>
+        <ul>
+            <li (click)="goListClientes()"><a>Gestionar Clientes</a></li>
+            <li (click)="goToList()"><a>Gestionar Productos</a></li>
+            <li (click)="goListaFac()"><a>Gestionar Facturas</a></li>
+            <li (click)="goCreaCompra()"><a>Realizar Compra</a></li>
+        </ul>
+    </nav><!-- / nav -->
+
+</header>
+<br><br><br><br>
+<div class="w-33">
+    <div class="center">
+        <h1>Listar Facturas</h1>
+    </div>
+</div>
+
+
+<table rules=all frame="box" class="styled-table">
+<tr id="cabecera_tabla">
+    <th id="txtNegrita">&nbsp;&nbsp;Codigo Factura&nbsp;&nbsp;</th> 
+    <th id="txtNegrita">&nbsp;&nbsp;ID del Cliente&nbsp;&nbsp;</th>
+    <th id="txtNegrita">&nbsp;&nbsp;fecha&nbsp;&nbsp;</th>
+    <th id="txtNegrita">&nbsp;&nbsp;Acciones</th>
+</tr>
+<tr *ngFor="let factura of facturas"> 
+    <th id="txtNoNegrita">{{factura.fac_Codigo}}</th>  
+    <th id="txtNoNegrita">{{factura.per_id}}</th>
+    <th id="txtNoNegrita">{{factura.fac_fecha}}</th>
+    <th colspan="2" id="txtNoNegrita" id="miBotonBonito"><button (click)="edit(factura)">Anular factura</button>
+        &nbsp;&nbsp;<button  (click)="ver(factura)">Revisar detalles</button>
+    </th>
+</tr> 
+
+
+
+</table>

@@ -1,0 +1,32 @@
+<header id="cabecera">
+    <img src="./assets/LogoUPS.png" class="logoUPS" style="float:left; height:70px; width: 70px;">
+    <a id="logo">
+        <span class="TIT">Universidad Politécnica Salesiana</span>
+        <span class="SUBTIT">PROYECTO FINAL PROGRAMACIÓN WEB</span>
+    </a> <!-- / #logo-header -->
+    <nav>
+        <ul>
+            <li (click)="goListClientes()"><a>Gestionar Clientes</a></li>
+            <li (click)="goToList()"><a>Gestionar Productos</a></li>
+            <li (click)="goListaFac()"><a>Gestionar Facturas</a></li>
+            <li (click)="goCreaCompra()"><a>Realizar Compra</a></li>
+        </ul>
+    </nav><!-- / nav -->
+
+</header>
+<br><br><br><br>
+
+<div class="w-33">
+    <div class="center">
+        <form>
+            <label id="txtNegrita" for="txtUID">Cedula: </label><br>
+            <input id="txtUID"name="txtUID" [(ngModel)]="persona.per_cedula"/><br>
+            <label id="txtNegrita" for="txtCode">Nombre: </label>   <br>
+            <input id="txtCode "name="txtCode"  [(ngModel)]="persona.per_Nombre"/><br>
+            <label id="txtNegrita" for="txtName">Direccion: </label><br>
+            <input id="txtName "name="txtName"  [(ngModel)]="persona.per_Direccion"/><br>
+        </form>
+   
+        <button id="miBotonBonito" type="button" (click)="edit()">Guardar</button>
+    </div>
+</div>

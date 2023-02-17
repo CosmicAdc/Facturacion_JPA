@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "comprasweb-alba": {
+      "hosting": {
+        "Nuevo1": [
+          "comprasweb-alba"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "comprasweb-alba"
+  }
+}

@@ -1,0 +1,73 @@
+<header id="cabecera">
+    <img src="./assets/LogoUPS.png" class="logoUPS" style="float:left; height:70px; width: 70px;">
+    <a id="logo">
+        <span class="TIT">Universidad Politécnica Salesiana</span>
+        <span class="SUBTIT">PROYECTO FINAL PROGRAMACIÓN WEB</span>
+    </a> <!-- / #logo-header -->
+    <nav>
+        <ul>
+            <li (click)="goListClientes()"><a>Gestionar Clientes</a></li>
+            <li (click)="goToList()"><a>Gestionar Productos</a></li>
+            <li (click)="goListaFac()"><a>Gestionar Facturas</a></li>
+            <li (click)="goCreaCompra()"><a>Realizar Compra</a></li>
+        </ul>
+    </nav><!-- / nav -->
+
+</header>
+<br><br><br><br>
+<body>
+
+<label id="txtNegrita" class="uwu" for="txtFecha">FECHA: </label>
+<input id="txtFecha " class="a"name="txtFecha"  [(ngModel)]="fecha" disabled=""><br>
+
+<form>
+    <label id="txtNegrita" class="uwu" for="txtUID">Cedula: </label>
+    <input   id="txtUID"name="txtUID" [(ngModel)]="persona.per_cedula"/>
+    &nbsp;&nbsp;<button  id="miBotonBonito" (click)="buscarCliente()" mat-raised-button color="accent">BUSCAR</button><br>
+    <label id="txtNegrita" class="uwu" for="txtCode">Nombre: </label>   
+    <input id="txtCode "name="txtCode"  [(ngModel)]="persona.per_Nombre" disabled><br>
+    <label  id="txtNegrita" class="uwu" for="txtName">Direccion: </label>
+    <input id="txtName "name="txtName"  [(ngModel)]="persona.per_Direccion"disabled/><br>    
+    <label id="txtNegrita" class="uwu" for="txtCodeProducto">Codigo de Producto: </label>
+    <input #txtCodeProducto type="number" min="0" name="txtCodeProducto"/>
+    &nbsp;&nbsp;<button  id="miBotonBonito" type="button" (click)="buscarProducto(txtCodeProducto.value)">Añadir</button><br>
+
+<table rules=all frame="box">
+    <tr id="cabecera_tabla">
+
+        <th id="txtNegrita">&nbsp;&nbsp;Codigo&nbsp;&nbsp;</th>
+
+        <th id="txtNegrita">&nbsp;&nbsp;Producto&nbsp;&nbsp;</th>
+
+        <th id="txtNegrita">&nbsp;&nbsp;Precio&nbsp;&nbsp;</th>
+
+        <th id="txtNegrita">&nbsp;&nbsp;Cantidad&nbsp;&nbsp;</th>
+
+        <th id="txtNegrita">&nbsp;&nbsp;Subtotal 12%&nbsp;&nbsp;</th>
+        
+        <th id="txtNegrita">&nbsp;&nbsp;Acciones&nbsp;&nbsp;</th>
+    </tr>
+     <!-- <tr *ngFor="let p of lstProductos">
+        <th id="txtNoNegrita">{{p.pro_codigo}}</th>
+        <th id="txtNoNegrita">{{p.pro_nombre}}</th>
+        <th id="txtNoNegrita">{{p.pro_precio}}</th>
+        <th ><input type="number" name="quantity" placeholder="1" min="1" max="1" ></th>     
+        <th id="txtNoNegrita">{{actualizar(p.pro_precio,1)}}</th>
+        <th><button  id="miBotonBonito" class="b" (click)="eliminar(p)" mat-raised-button color="accent">Eliminar</button></th> 
+       
+    </tr> -->
+    <tr *ngFor="let p of listaDetalles;let i = index">
+        <th id="txtNoNegrita">{{p.pro_codigo}}</th>
+        <th id="txtNoNegrita">{{listaProductos[i].pro_nombre}}</th>
+        <th id="txtNoNegrita">{{listaProductos[i].pro_precio}}</th>
+        <th ><input type="number" name="quantity" placeholder="1" min="1" [(ngModel)]="p.det_cantidad" ></th>        
+      
+        <th id="txtNoNegrita" >{{actualizar(listaProductos[i].pro_precio,p.det_cantidad)}}</th>
+        <th><button  id="miBotonBonito" class="b" (click)="eliminar2(p)" mat-raised-button color="accent">Eliminar</button></th> 
+       
+    </tr>
+</table>
+</form>
+<br>
+<button class="a" id="miBotonBonito" (click)="crear()"> CREAR FACTURA </button>
+</body>

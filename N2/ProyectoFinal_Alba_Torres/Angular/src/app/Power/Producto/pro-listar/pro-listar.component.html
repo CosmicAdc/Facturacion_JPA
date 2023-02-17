@@ -1,0 +1,49 @@
+
+
+<header id="cabecera">
+    <img src="./assets/LogoUPS.png" class="logoUPS" style="float:left; height:70px; width: 70px;">
+    <a id="logo">
+        <span class="TIT">Universidad Politécnica Salesiana</span>
+        <span class="SUBTIT">PROYECTO FINAL PROGRAMACIÓN WEB</span>
+    </a> <!-- / #logo-header -->
+    <nav>
+        <ul>
+            <li (click)="goListClientes()"><a>Gestionar Clientes</a></li>
+            <li (click)="goToList()"><a>Gestionar Productos</a></li>
+            <li (click)="goListaFac()"><a>Gestionar Facturas</a></li>
+            <li (click)="goCreaCompra()"><a>Realizar Compra</a></li>
+        </ul>
+    </nav><!-- / nav -->
+
+</header>
+<body>
+<br><br><br><br>
+
+<table rules=all frame="box">
+    <tr id="cabecera_tabla">
+        <th id="txtNegrita">&nbsp;&nbsp;Codigo&nbsp;&nbsp;</th>
+        <th id="txtNegrita">&nbsp;&nbsp;Nombre&nbsp;&nbsp;</th>
+        <th id="txtNegrita">&nbsp;&nbsp;Precio&nbsp;&nbsp;</th>
+        <th id="txtNegrita">&nbsp;&nbsp;Stock&nbsp;&nbsp;</th>
+        <th id="txtNegrita">&nbsp;&nbsp;Acciones</th>
+    </tr>
+    
+    <tr  *ngFor="let p of lstProductos" >
+        <th id="txtNoNegrita">{{p.pro_codigo}}</th>
+        <th id="txtNoNegrita">{{p.pro_nombre}}</th>
+        <th id="txtNoNegrita">{{p.pro_precio}}</th>
+        <th id="txtNoNegrita">{{p.pro_stock}}</th>
+        <th colspan="2">&nbsp;&nbsp;<button id="miBotonBonito" (click)="editProducto(p)" mat-raised-button color="accent">Editar</button>
+            &nbsp;&nbsp;<button id="miBotonBonito" (click)="delete(p.pro_codigo)" mat-raised-button color="accent">Eliminar</button>&nbsp;&nbsp;</th>
+        
+    </tr>
+</table>
+<div class="w-33">
+    <div class="center">
+        <button id="miBotonBonitoa" (click)="goToCrear()" mat-raised-button color="accent">Crear nuevo producto</button>
+    </div>
+</div>
+
+
+
+</body> 
